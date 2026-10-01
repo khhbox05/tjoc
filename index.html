@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>投稿審查系統</title>
+<script>
+  // ▼▼▼ 只要改這一行：把引號內換成你的系統網址（https://script.google.com/macros/s/.../exec）▼▼▼
+  var SYSTEM_URL = "請貼上系統網址";
+  // ▲▲▲ 其他地方都不用改 ▲▲▲
+
+  if (/^https:\/\/script\.google\.com\//.test(SYSTEM_URL)) {
+    window.location.replace(SYSTEM_URL);
+  }
+</script>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#f5f6f8;color:#1f2933;
+       font:15px/1.6 -apple-system,"Segoe UI","Noto Sans TC","Microsoft JhengHei",sans-serif;padding:16px;box-sizing:border-box}
+  .box{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:28px 32px;max-width:420px;text-align:center}
+  h1{font-size:18px;margin:0 0 8px}
+  p{margin:0 0 16px;color:#6b7280}
+  a.btn{display:inline-block;background:#2459a8;color:#fff;text-decoration:none;padding:8px 18px;border-radius:6px}
+  a.btn:focus-visible{outline:3px solid #93c5fd;outline-offset:2px}
+</style>
+</head>
+<body>
+  <div class="box">
+    <h1>📚 投稿審查系統</h1>
+    <p id="msg">正在前往系統，請稍候…</p>
+    <a class="btn" id="go" href="#">如果沒有自動跳轉，請點這裡</a>
+  </div>
+  <script>
+    var go = document.getElementById('go');
+    if (/^https:\/\/script\.google\.com\//.test(SYSTEM_URL)) {
+      go.href = SYSTEM_URL;
+    } else {
+      document.getElementById('msg').textContent = '尚未設定系統網址，請管理者編輯 index.html。';
+      go.style.display = 'none';
+    }
+  </script>
+</body>
+</html>
